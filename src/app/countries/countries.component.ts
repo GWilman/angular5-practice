@@ -12,11 +12,11 @@ export class CountriesComponent implements OnInit {
 
   constructor(private countryService: CountryService) { }
 
-  countries: {};
-  filtered: {};
-  alphabet: [];
-  countryName: '';
-  selectedChar: '';
+  countries: {} = [];
+  filtered: {} = [];
+  alphabet: {} = [];
+  countryName: string = '';
+  selectedChar: string = '';
 
   ngOnInit() {
     this.getCountries();
