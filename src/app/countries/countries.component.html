@@ -1,0 +1,33 @@
+<section>
+  <div class="container">
+    <div class="field">
+      <label class="label">Filter Countries</label>
+      <div class="control">
+        <input
+          #searchBox id="search-box"
+          class="input"
+          type="text"
+          placeholder="Search by country name"
+          [(ngModel)]="countryName"
+          (keyup)="filterName(searchBox.value)"
+        />
+      </div>
+    </div>
+    <div class="tabs">
+      <ul>
+        <li *ngFor="let char of alphabet" [ngClass]="{'is-active': char == selectedChar}">
+          <a [id]="char" (click)="filterFirstChar(char)">{{char}}</a>
+        </li>
+      </ul>
+    </div>
+    <img class="spinner" *ngIf="!countries" src="../../assets/images/spinner.gif" />
+    <div class="columns is-multiline is-mobile">
+      <div class="column is-one-quarter-desktop is-one-third-tablet is-full-mobile" *ngFor="let country of filtered">
+        <div class="card countryContainer">
+          <h2>{{country.name}}</h2>
+          <img src="{{country.flag}}">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

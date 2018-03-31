@@ -1,0 +1,32 @@
+/* .countriesContainer {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+} */
+
+div.tabs a {
+  padding: .5em .7em;
+}
+
+.spinner {
+  display: block;
+  margin: auto;
+}
+
+.countryContainer {
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 1s ease;
+}
+
+.countryContainer img {
+  height: 120px;
+  border: 1px solid #e9e9e9;
+}
+
+@media only screen and (max-width: 700px) {
+  .countriesContainer {
+    margin: 0 1rem;
+  }
+}

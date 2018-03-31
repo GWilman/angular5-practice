@@ -1,0 +1,9 @@
+.hero {
+  background-image: url(https://images.unsplash.com/photo-1508854227348-cc1b0d6d992d?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c82430415e9b53bc01507100d0d03b3f&auto=format&fit=crop&w=1651&q=80);
+  background-size: cover;
+  margin-bottom: 2rem;
+}
+
+.hero .hero-body {
+  padding: 7rem 1.5rem;
+}
