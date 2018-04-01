@@ -25,25 +25,26 @@ export class CountryShowComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCountry();
+
+    // load google map
+    const mapProp = {
+      zoom: 5,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
   }
 
   // void is a bit like the opposite of any (meaning no type at all), commonly used on functions that do not return anything
   getCountry(): void {
     const code = this.route.snapshot.paramMap.get('code');
     this.countryService.getCountry(code)
-        .subscribe(country => {
+        .subscribe((country: any) => {
           this.country = country;
-
-          const mapProp = {
-            center: {
-              lat: this.country.latlng[0],
-              lng: this.country.latlng[1]
-            },
-            zoom: 5,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-          };
-          this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-
+          // set map center with country location
+          this.map.setCenter({
+            lat: country.latlng[0],
+            lng: country.latlng[1]
+          })
         });
   }
 

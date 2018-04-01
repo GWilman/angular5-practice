@@ -26,7 +26,7 @@ export class CountriesComponent implements OnInit {
   // void is a bit like the opposite of any (meaning no type at all), commonly used on functions that do not return anything
   getCountries(): void {
     this.countryService.getCountries()
-        .subscribe(countries => {
+        .subscribe((countries: any) => {
           this.countries = countries;
           this.filtered = countries;
         });
