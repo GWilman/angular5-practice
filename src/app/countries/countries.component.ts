@@ -18,7 +18,7 @@ export class CountriesComponent implements OnInit {
   countryName: string = '';
   selectedChar: string = '';
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getCountries();
     this.alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   }

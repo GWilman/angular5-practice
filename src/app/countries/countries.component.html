@@ -23,10 +23,12 @@
     <img class="spinner" *ngIf="!countries" src="../../assets/images/spinner.gif" />
     <div class="columns is-multiline is-mobile">
       <div class="column is-one-quarter-desktop is-one-third-tablet is-full-mobile" *ngFor="let country of filtered">
-        <div class="card countryContainer">
-          <h2>{{country.name}}</h2>
-          <img src="{{country.flag}}">
-        </div>
+        <a routerLink="/country/{{country.alpha3Code}}">
+          <div class="card countryContainer">
+            <h2>{{country.name}}</h2>
+            <img src="{{country.flag}}" />
+          </div>
+        </a>
       </div>
     </div>
   </div>

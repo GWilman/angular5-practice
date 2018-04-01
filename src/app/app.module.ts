@@ -8,22 +8,28 @@ import { AppComponent } from './app.component';
 import { CountriesComponent } from './countries/countries.component';
 import { D3Component } from './d3/d3.component';
 import { HeroComponent } from './hero/hero.component';
+import { CountryShowComponent } from './country-show/country-show.component';
 
 // Services
 import { CountryService } from './country.service';
 import { D3Service } from 'd3-ng2-service';
+
+// Router
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountriesComponent,
     D3Component,
-    HeroComponent
+    HeroComponent,
+    CountryShowComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [CountryService, D3Service],
   bootstrap: [AppComponent]
