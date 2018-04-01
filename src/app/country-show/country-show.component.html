@@ -1,17 +1,28 @@
 <section>
   <div class="container">
     <img class="spinner" *ngIf="!country" src="../../assets/images/spinner.gif" />
-    <button class="button is-primary" (click)="goBack()">Back</button>
+    <button class="button is-primary back-button" (click)="goBack()">Back</button>
     <h1 class="title is-1">{{country.name}}</h1>
-    <div class="columns">
+    <div class="columns is-multiline">
       <div class="column is-half-desktop">
         <img src="{{country.flag}}" />
       </div>
       <div class="column is-half-desktop">
-        <h2 class="subtitle is-3">Key information:</h2>
-        <p>Capital: {{country.capital}}</p>
-        <p>Region: {{country.region}}</p>
-        <p>Population: {{country.population | number }}</p>
+        <h2 class="subtitle is-4">Key information:</h2>
+        <p><span class="has-text-weight-semibold">Capital:</span> {{country.capital || 'N/A'}}</p>
+        <p><span class="has-text-weight-semibold">Region:</span> {{country.region}}</p>
+        <p><span class="has-text-weight-semibold">Population:</span> {{country.population | number}}</p>
+        <p><span class="has-text-weight-semibold">Currencies:</span></p>
+        <ul class="tags">
+          <li class="tag" *ngFor="let currency of country.currencies">{{currency.name}}</li>
+        </ul>
+        <p><span class="has-text-weight-semibold">Languages:</span></p>
+        <ul class="tags">
+          <li class="tag" *ngFor="let language of country.languages">{{language.name}}</li>
+        </ul>
+      </div>
+      <div class="column is-full-desktop">
+        <div #gmap style="width:100%;height:400px"></div>
       </div>
     </div>
   </div>

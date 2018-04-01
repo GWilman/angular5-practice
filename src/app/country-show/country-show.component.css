@@ -1,0 +1,21 @@
+.back-button {
+  margin-bottom: 1rem;
+}
+
+.spinner {
+  display: block;
+  margin: auto;
+}
+
+img {
+  width: 100%;
+  box-shadow: 0 0 1px #e9e9e9;
+}
+
+span {
+  text-transform: capitalize;
+}
+
+ul.tags {
+  margin-bottom: 0;
+}
